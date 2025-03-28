@@ -42,12 +42,24 @@ function Sales(props) {
                                 {store.map(item=><option>{item} 호점</option>)}
                             </select>
                         </Nav.Link>
-                     
                     </Nav.Item>
                 </Nav>
             </div>
             <div id="storeSale">
-                <TableComponent columns={cols} data={data}/>
+            <table >
+            <thead>
+                <tr>
+                    {cols.map(col=><th key={col.key}>{col.label}</th>)}
+                </tr>
+            </thead>
+            <tbody>
+                {data.map((row,index)=>
+                <tr key={index}>
+                    {cols.map((item)=><td key={item.key}>{row[item.key]}</td>)}
+                </tr>
+            )}
+            </tbody>
+        </table> 
             </div>
         </>
     );

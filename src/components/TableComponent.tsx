@@ -1,7 +1,9 @@
+
+
 function TableComponent({columns,data}) {
     return (
-        <table className="table-responsive">
-            <thead className="table-dark">
+        <table>
+            <thead>
                 <tr>
                     {columns.map(col=><th key={col.key}>{col.label}</th>)}
                 </tr>
